@@ -12,6 +12,15 @@ app_license = "MIT"
 # Includes in <head>
 # ------------------
 
+fixtures = [
+    {
+    "dt": "Custom Field", 
+    "filters": [
+            ["fieldname", "in", ("message_body", "section_break_14", "reminder_sent")]
+        ]
+    }
+]
+
 # include js, css files in header of desk.html
 # app_include_css = "/assets/gyannam/css/gyannam.css"
 # app_include_js = "/assets/gyannam/js/gyannam.js"
@@ -100,23 +109,28 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"gyannam.tasks.all"
-# 	],
-# 	"daily": [
-# 		"gyannam.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"gyannam.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"gyannam.tasks.weekly"
-# 	]
-# 	"monthly": [
-# 		"gyannam.tasks.monthly"
-# 	]
-# }
+scheduler_events = {
+	# "all": [
+	# 	"gyannam.utility.course_schedule_utility.schedule_alert"
+	# ],
+	"daily": [
+		"gyannam.utility.course_schedule_utility.send_email_before_day"
+	],
+    "cron": {
+		"0/15 * * * *": [
+			"gyannam.utility.course_schedule_utility.schedule_alert"
+		],
+    }
+	# "hourly": [
+	# 	"gyannam.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"gyannam.tasks.weekly"
+	# ]
+	# "monthly": [
+	# 	"gyannam.tasks.monthly"
+	# ]
+}
 
 # Testing
 # -------
