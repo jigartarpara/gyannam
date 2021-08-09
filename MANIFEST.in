@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include gyannam *.css
+recursive-include gyannam *.csv
+recursive-include gyannam *.html
+recursive-include gyannam *.ico
+recursive-include gyannam *.js
+recursive-include gyannam *.json
+recursive-include gyannam *.md
+recursive-include gyannam *.png
+recursive-include gyannam *.py
+recursive-include gyannam *.svg
+recursive-include gyannam *.txt
+recursive-exclude gyannam *.pyc

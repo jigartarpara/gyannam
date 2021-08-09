@@ -1,0 +1,7 @@
+## Gyannam
+
+Educational
+
+#### License
+
+MIT
