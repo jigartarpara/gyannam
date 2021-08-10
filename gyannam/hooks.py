@@ -61,6 +61,8 @@ fixtures = [
 
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
+website_generators = ["Course Schedule"]
+
 
 # Installation
 # ------------
@@ -85,6 +87,10 @@ fixtures = [
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
+
+has_website_permission = {
+    "Course Schedule": "gyannam.utility.course_schedule_utility.has_website_permission"
+}
 
 # DocType Class
 # ---------------

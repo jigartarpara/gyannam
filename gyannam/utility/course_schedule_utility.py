@@ -47,3 +47,14 @@ def send_course_alert(course):
         enqueue(method=frappe.sendmail, queue='short',timeout=300, is_async=True, **email_args)
     else:
         frappe.msgprint("No Recipients found")
+
+def has_website_permission(doc, ptype, user, verbose=Fals):
+    if doc.student_group == get_student():
+		return True
+	else:
+		return False
+
+def get_student():
+    student = frappe.db.get_value("Student", {'student_email_id': frappe.session.user})
+    if student:
+        return frappe.db.get_value("Student Group Student", filters = {'student': student}, fields=['parent'])
