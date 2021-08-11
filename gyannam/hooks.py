@@ -86,11 +86,6 @@ fixtures = [
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
-has_website_permission = {
-    "Course Schedule": "gyannam.utility.course_schedule_utility.has_website_permission"
-}
-
-
 # DocType Class
 # ---------------
 # Override standard doctype classes

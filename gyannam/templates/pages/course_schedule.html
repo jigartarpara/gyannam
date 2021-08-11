@@ -1,0 +1,52 @@
+<main class="container my-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="page-header">
+
+            <h2>Course Schedule</h2>
+
+        </div>
+
+    </div>
+
+    <div class="page_content">
+        <div>
+
+
+            <div class="web-form-wrapper" data-web-form="course-schedule" data-web-form-doctype="Course Schedule"
+                data-login-required="0" data-is-list="1" data-allow-delete="0"></div>
+            <div id="list-filters" class="row"></div>
+            <div id="datatable" class="pt-4">
+                <table class="table">
+                    <thead style="background-color: rgb(247, 250, 252); color: rgb(141, 153, 166);">
+                        <tr>
+                            <th><input type="checkbox" id="select-all"></th>
+                            <th>Sr</th>
+                            <th>Title</th>
+                            <th>From Time</th>
+                            <th>To Time</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for schedule in course_schedule %}
+                        <tr id="EDU-CSH-2021-00002" style="cursor: pointer;">
+                            <td><input type="checkbox"></td>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ schedule.name }}</td>
+                            <td>{{ schedule.from_time }}</td>
+                            <td>{{ schedule.to_time }}</td>
+                            <td style="word-wrap: break-word;">{% if schedule.message_body %}<a class="text-wrap">{{
+                                    schedule.message_body }}</a> {%
+                                endif %}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="list-view-footer text-right"></div>
+
+        </div>
+    </div>
+
+    <div class="page-footer"></div>
+</main>
