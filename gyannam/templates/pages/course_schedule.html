@@ -21,10 +21,10 @@
                         <tr>
                             <th><input type="checkbox" id="select-all"></th>
                             <th>Sr</th>
-                            <th>Title</th>
+                            <th>Date</th>
                             <th>From Time</th>
                             <th>To Time</th>
-                            <th>Message</th>
+                            <th>Live Class</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,11 +32,12 @@
                         <tr id="EDU-CSH-2021-00002" style="cursor: pointer;">
                             <td><input type="checkbox"></td>
                             <td>{{ loop.index }}</td>
-                            <td>{{ schedule.name }}</td>
+                            <td>{{ frappe.format(schedule.schedule_date, {'fieldtype': 'Date'}) }}</td>
                             <td>{{ schedule.from_time }}</td>
                             <td>{{ schedule.to_time }}</td>
-                            <td style="word-wrap: break-word;">{% if schedule.message_body %}<a class="text-wrap">{{
-                                    schedule.message_body }}</a> {%
+                            <td style="word-wrap: break-word;">{% if schedule.live_class %}<a class="text-wrap"
+                                    href="{{schedule.live_class}}">{{
+                                    schedule.live_class }}</a> {%
                                 endif %}</td>
                         </tr>
                         {% endfor %}

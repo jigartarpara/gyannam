@@ -16,7 +16,7 @@ fixtures = [
     {
     "dt": "Custom Field", 
     "filters": [
-            ["fieldname", "in", ("message_body", "section_break_14", "reminder_sent", "web_page")]
+            ["fieldname", "in", ("message_body", "section_break_14", "reminder_sent", "web_page", "live_class")]
         ]
     }
 ]
