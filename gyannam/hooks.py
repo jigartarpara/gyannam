@@ -16,7 +16,7 @@ fixtures = [
     {
     "dt": "Custom Field", 
     "filters": [
-            ["fieldname", "in", ("message_body", "section_break_14", "reminder_sent")]
+            ["fieldname", "in", ("message_body", "section_break_14", "reminder_sent", "web_page")]
         ]
     }
 ]
@@ -85,6 +85,10 @@ fixtures = [
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
+
+has_website_permission = {
+    # "Web Page": "gyannam.utility.web_page_utility.has_website_permission"
+}
 
 # DocType Class
 # ---------------
