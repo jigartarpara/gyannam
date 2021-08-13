@@ -1,4 +1,17 @@
-<main class="container my-4">
+<head>
+    <style>
+        .cs {
+            max-width: 768px;
+            border: 5px solid var(--gray-300);
+            border-radius: .5rem;
+            padding: 1.5rem 1rem 3rem 1rem;
+            margin: 2rem auto;
+            /* background-color: #FF7825; */
+            color: white;
+        }
+    </style>
+</head>
+<main class="container my-4 cs">
     <div class="d-flex justify-content-between align-items-center">
         <div class="page-header">
 
@@ -19,7 +32,6 @@
                 <table class="table">
                     <thead style="background-color: rgb(247, 250, 252); color: rgb(141, 153, 166);">
                         <tr>
-                            <th><input type="checkbox" id="select-all"></th>
                             <th>Sr</th>
                             <th>Date</th>
                             <th>From Time</th>
@@ -30,7 +42,6 @@
                     <tbody>
                         {% for schedule in course_schedule %}
                         <tr id="EDU-CSH-2021-00002" style="cursor: pointer;">
-                            <td><input type="checkbox"></td>
                             <td>{{ loop.index }}</td>
                             <td>{{ frappe.format(schedule.schedule_date, {'fieldtype': 'Date'}) }}</td>
                             <td>{{ schedule.from_time }}</td>

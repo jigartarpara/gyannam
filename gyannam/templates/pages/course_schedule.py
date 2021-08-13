@@ -3,7 +3,6 @@ import frappe
 
 def get_context(context):
     context.no_cache = True
-    context.show_sidebar = True
     context.login_required = True
     if frappe.session.user == 'Administrator':
         course_schedule = frappe.get_list('Course Schedule', fields=['name', 'schedule_date', 'from_time', 'to_time', 'live_class'])
