@@ -6,8 +6,6 @@
             border-radius: .5rem;
             padding: 1.5rem 1rem 3rem 1rem;
             margin: 2rem auto;
-            /* background-color: #FF7825; */
-            color: white;
         }
     </style>
 </head>
@@ -27,8 +25,24 @@
 
             <div class="web-form-wrapper" data-web-form="course-schedule" data-web-form-doctype="Course Schedule"
                 data-login-required="0" data-is-list="1" data-allow-delete="0"></div>
-            <div id="list-filters" class="row"></div>
-            <div id="datatable" class="pt-4">
+            <div id="list-filters" class="row">
+                <div.col-sm-4 class="col col-sm-3">
+                    <div class="frappe-control input-max-width" data-fieldtype="Date" data-fieldname="schedule_date">
+                        <div class="form-group">
+                            <div class=""> <label class="control-label" style="padding-right: 0px;">Schedule
+                                    Date</label> </div>
+                            <div class="control-input-wrapper">
+                                <div class="control-input">
+                                    <input type="date" autocomplete="off" class="input-with-feedback form-control"
+                                        data-fieldtype="Date" data-fieldname="schedule_date" placeholder="Schedule Date"
+                                        name="schedule_date" id="schedule_date">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div.col-sm-4>
+            </div>
+            <div id=" datatable" class="pt-4">
                 <table class="table">
                     <thead style="background-color: rgb(247, 250, 252); color: rgb(141, 153, 166);">
                         <tr>
@@ -43,7 +57,8 @@
                         {% for schedule in course_schedule %}
                         <tr id="EDU-CSH-2021-00002" style="cursor: pointer;">
                             <td>{{ loop.index }}</td>
-                            <td>{{ frappe.format(schedule.schedule_date, {'fieldtype': 'Date'}) }}</td>
+                            <td>{{ frappe.format(schedule.schedule_date, {'fieldtype': 'Date'}) }}
+                            </td>
                             <td>{{ schedule.from_time }}</td>
                             <td>{{ schedule.to_time }}</td>
                             <td style="word-wrap: break-word;">{% if schedule.live_class %}<a class="text-wrap"
@@ -62,3 +77,15 @@
 
     <div class="page-footer"></div>
 </main>
+<script>
+    frappe.ready(function () {
+        $('.input-with-feedback').on('change', function () {
+            var schedule_date = $("[name='schedule_date']").val();
+            console.log(schedule_date);
+            if (schedule_date) {
+                window.location.href = "/course_schedule?schedule_date=" + schedule_date;
+            }
+
+        })
+    })
+</script>
