@@ -8,15 +8,18 @@ app_icon = "octicon octicon-file-directory"
 app_color = "grey"
 app_email = "team@khatavahi.in"
 app_license = "MIT"
+app_logo_url = "/files/logo new.png"
+
 
 # Includes in <head>
 # ------------------
 
 fixtures = [
     {
-    "dt": "Custom Field", 
-    "filters": [
-            ["fieldname", "in", ("message_body", "section_break_14", "reminder_sent", "web_page", "live_class")]
+        "dt": "Custom Field",
+        "filters": [
+            ["fieldname", "in", ("message_body", "section_break_14",
+                                 "reminder_sent", "web_page", "live_class")]
         ]
     }
 ]
@@ -114,26 +117,26 @@ has_website_permission = {
 # ---------------
 
 scheduler_events = {
-	# "all": [
-	# 	"gyannam.utility.course_schedule_utility.schedule_alert"
-	# ],
-	"daily": [
-		"gyannam.utility.course_schedule_utility.send_email_before_day"
-	],
+    # "all": [
+    # 	"gyannam.utility.course_schedule_utility.schedule_alert"
+    # ],
+    "daily": [
+        "gyannam.utility.course_schedule_utility.send_email_before_day"
+    ],
     "cron": {
-		"0/15 * * * *": [
-			"gyannam.utility.course_schedule_utility.schedule_alert"
-		],
+        "0/15 * * * *": [
+            "gyannam.utility.course_schedule_utility.schedule_alert"
+        ],
     }
-	# "hourly": [
-	# 	"gyannam.tasks.hourly"
-	# ],
-	# "weekly": [
-	# 	"gyannam.tasks.weekly"
-	# ]
-	# "monthly": [
-	# 	"gyannam.tasks.monthly"
-	# ]
+    # "hourly": [
+    # 	"gyannam.tasks.hourly"
+    # ],
+    # "weekly": [
+    # 	"gyannam.tasks.weekly"
+    # ]
+    # "monthly": [
+    # 	"gyannam.tasks.monthly"
+    # ]
 }
 
 # Testing
@@ -164,24 +167,24 @@ scheduler_events = {
 # --------------------
 
 user_data_fields = [
-	{
-		"doctype": "{doctype_1}",
-		"filter_by": "{filter_by}",
-		"redact_fields": ["{field_1}", "{field_2}"],
-		"partial": 1,
-	},
-	{
-		"doctype": "{doctype_2}",
-		"filter_by": "{filter_by}",
-		"partial": 1,
-	},
-	{
-		"doctype": "{doctype_3}",
-		"strict": False,
-	},
-	{
-		"doctype": "{doctype_4}"
-	}
+    {
+        "doctype": "{doctype_1}",
+        "filter_by": "{filter_by}",
+        "redact_fields": ["{field_1}", "{field_2}"],
+        "partial": 1,
+    },
+    {
+        "doctype": "{doctype_2}",
+        "filter_by": "{filter_by}",
+        "partial": 1,
+    },
+    {
+        "doctype": "{doctype_3}",
+        "strict": False,
+    },
+    {
+        "doctype": "{doctype_4}"
+    }
 ]
 
 # Authentication and authorization
@@ -190,4 +193,3 @@ user_data_fields = [
 # auth_hooks = [
 # 	"gyannam.auth.validate"
 # ]
-
